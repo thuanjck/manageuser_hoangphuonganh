@@ -1,0 +1,74 @@
+﻿@{
+    ViewBag.Title = "Login";
+    Layout = null;
+}
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>Login Account Admin</title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Shop Giay AT" />
+    <script type="application/x-javascript">
+         addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+        function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- Meta tag Keywords -->
+    <!-- css files -->
+    <link rel="stylesheet" href="@Url.Content("~/css_login_admin/style_login.css")" type="text/css" media="all" /> <!-- Style-CSS -->
+    <link rel="stylesheet" href="@Url.Content("~/css_login_admin/font-awesome.css")" /> <!-- Font-Awesome-Icons-CSS -->
+    <!-- //css files -->
+    <!-- online-fonts -->
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800&amp;subset=latin-ext" rel="stylesheet">
+    <!-- //online-fonts -->
+</head>
+<body>
+    <!-- main -->
+    <div class="center-container">
+        <!--header-->
+        <div class="header-w3l">
+            <h1>Trường đại học Công Nghệ Giao Thông Vận Tải</h1>
+            <h1>Hoàng Phương Anh - 68DCHT22</h1>
+        </div>
+        <!--//header-->
+        <div class="main-content-agile">
+            <div class="sub-main-w3">
+                <div class="wthree-pro">
+                    <h2>Login with admin</h2>
+                </div>
+                @using (Html.BeginForm("Login", "Login", FormMethod.Post, new { style = "height:100%;" }))
+                {
+                    @Html.AntiForgeryToken()
+                    {
+                        if (ViewBag.listErrorMessage != null)
+                        {
+                            foreach (var item in ViewBag.listErrorMessage as List<string>)
+                            {
+                                <div class="wthree-pro" style="color:red">
+                                    <h2 style="color:red">@item</h2>
+                                </div>
+                            }
+                        }
+                        <div class="pom-agile" style = "height:100%;">
+                            <input placeholder="E-mail" name="email" class="user" type="email" value="@ViewBag.email" required="" />
+                            <span class="icon1"><i class="fa fa-user" aria-hidden="true"></i></span>
+                        </div>
+                        <div class="pom-agile">
+                            <input placeholder="Password" name="password" class="pass" type="password" value="" required="" />
+                            <span class="icon2"><i class="fa fa-unlock" aria-hidden="true"></i></span>
+                        </div>
+                        <div class="sub-w3l">
+                            <h6><a href="#">Forgot Password?</a></h6>
+                            <div class="right-w3l">
+                                <input type="submit" value="Login" />
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+            <!--//main-->
+        </div>
+    </div>
+</body>
+</html>
