@@ -132,8 +132,10 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
+    <Compile Include="Areas\Admin\Controllers\LogoutController.cs" />
     <Compile Include="Areas\Admin\DAO\BaseDao.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -148,6 +150,7 @@
     <Compile Include="Models\Entities\Tbl_sanpham.cs" />
     <Compile Include="Models\Entities\Tbl_user.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\Common.cs" />
     <Compile Include="Utils\Constants.cs" />
     <Compile Include="Utils\ErrorMessage.cs" />
     <Compile Include="ValidateUser\TblUserValidate.cs" />
@@ -303,6 +306,9 @@
     <Folder Include="Areas\Admin\img\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Styles\" />
+    <Folder Include="Areas\Admin\Views\Base\" />
+    <Folder Include="Areas\Admin\Views\ListUser\" />
+    <Folder Include="Areas\Admin\Views\Logout\" />
     <Folder Include="Common\" />
     <Folder Include="data\" />
     <Folder Include="Imagesize\" />
