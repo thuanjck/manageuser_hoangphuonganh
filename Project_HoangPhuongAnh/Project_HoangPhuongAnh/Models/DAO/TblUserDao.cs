@@ -26,7 +26,7 @@ namespace Project_HoangPhuongAnh.Models.DAO
                 if (OpenConnection() != null)
                 {
                     StringBuilder query = new StringBuilder();
-                    query.Append("use manageuser_hoangphuonganh;");
+                    query.Append("use manageuser;");
                     query.Append(" select * from tbl_user as u");
                     query.Append(" where u.email = @email ");
                     query.Append(" and u.password = @password");

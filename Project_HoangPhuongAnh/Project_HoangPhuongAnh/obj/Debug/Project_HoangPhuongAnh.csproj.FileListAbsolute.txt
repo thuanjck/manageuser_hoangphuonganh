@@ -73,3 +73,4 @@ D:\DA_PA_2020\manageruser_hpa\Project_HoangPhuongAnh\Project_HoangPhuongAnh\obj\
 D:\DA_PA_2020\manageruser_hpa\Project_HoangPhuongAnh\Project_HoangPhuongAnh\obj\Debug\Project_HoangPhuongAnh.csproj.CopyComplete
 D:\DA_PA_2020\manageruser_hpa\Project_HoangPhuongAnh\Project_HoangPhuongAnh\obj\Debug\Project_HoangPhuongAnh.dll
 D:\DA_PA_2020\manageruser_hpa\Project_HoangPhuongAnh\Project_HoangPhuongAnh\obj\Debug\Project_HoangPhuongAnh.pdb
+D:\DA_PA_2020\manageruser_hpa\Project_HoangPhuongAnh\Project_HoangPhuongAnh\obj\Debug\Project_HoangPhuongAnh.csprojAssemblyReference.cache

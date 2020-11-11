@@ -8,7 +8,7 @@ namespace Project_HoangPhuongAnh.Areas.Admin.DAO
     public class BaseDao
     {
         private string connectionString =
-            "Data Source=TAVIETTHUAN\\SQLEXPRESS;Initial Catalog=manageuser_hoangphuonganh;Integrated Security=True";
+            "workstation id=manageuser.mssql.somee.com;packet size=4096;user id=root_admin;pwd=123456123;data source=manageuser.mssql.somee.com;persist security info=False;initial catalog=manageuser";
 
         protected SqlConnection conn;
 
