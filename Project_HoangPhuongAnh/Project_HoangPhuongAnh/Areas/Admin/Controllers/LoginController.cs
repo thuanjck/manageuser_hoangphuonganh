@@ -54,7 +54,7 @@ namespace Project_HoangPhuongAnh.Areas.Admin.Controllers
             catch
             {
                 // chuyển sang màn hình thông báo lỗi hệ thống
-                return RedirectToAction("SystemError", "SystemError");
+                return RedirectToAction("Error", "Error");
             }
         }
     }

@@ -80,8 +80,10 @@ namespace Project_HoangPhuongAnh.Models.DAO
                         {
                             whitelist.Add(sqlDataReader["COLUMN_NAME"].ToString());
                         }
+                        sqlDataReader.Close();
                     }
                 }
+
                 return whitelist;
             }
             catch (SqlException e)

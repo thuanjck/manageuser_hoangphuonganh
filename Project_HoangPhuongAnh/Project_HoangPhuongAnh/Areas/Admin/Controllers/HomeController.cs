@@ -1,4 +1,5 @@
 ﻿using Project_HoangPhuongAnh.Models.DAO;
+using Project_HoangPhuongAnh.Models.Entities;
 using Project_HoangPhuongAnh.Utils;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,7 @@ namespace Project_HoangPhuongAnh.Areas.Admin.Controllers
             try
             {
                 TblUserDao user = new TblUserDao();
+                List<Tbl_user> _userInfor = new List<Tbl_user>();
                 List<int> listPaging = new List<int>();
 
                 string full_name = Common.GetData(Session.Contents["full_name"], "");
@@ -127,9 +129,10 @@ namespace Project_HoangPhuongAnh.Areas.Admin.Controllers
 
 
                     // lấy danh sách userinfor
-                    listUserInfor = user.GetAllUser(offset, limit, group_id, full_name, sortType, sortByFullName, sortByCodeLevel, sortByEndDate);
+                    _userInfor = user.GetAllUser(offset, limit, full_name, sortType, sortByFullName);
 
 
+                    ViewBag._userInfor = _userInfor;
                     ViewBag.sortByFullName = sortByFullName;
                     ViewBag.full_name = full_name;
                     ViewBag.listPaging = listPaging;
@@ -140,13 +143,13 @@ namespace Project_HoangPhuongAnh.Areas.Admin.Controllers
 
                 }
                 return View();
-            }
+        }
             catch
             {
                 // chuyển sang màn hình thông báo lỗi hệ thống
-                return RedirectToAction("SystemError", "SystemError");
-            }
-            
-        }
+                return RedirectToAction("Error", "Error");
+    }
+
+}
     }
 } 
