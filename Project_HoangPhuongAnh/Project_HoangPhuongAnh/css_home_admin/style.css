@@ -271,21 +271,13 @@ table tr th { color: #688a7e;}
 }
 
 .login-form .form-control {
-
     position: relative;
-
     font-size: 16px;
-
     height: auto;
-
     padding: 10px;
-
     -webkit-box-sizing: border-box;
-
     -moz-box-sizing: border-box;
-
     box-sizing: border-box;
-
 }
 
 .login-form .form-control:focus {
@@ -9902,4 +9894,8 @@ span.customSelect.changed {
 
 #sendmessage.show, #errormessage.show, .show {
 	display:block;
+}
+
+::placeholder {
+    color: red;
 }

@@ -659,7 +659,6 @@
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Styles\" />
     <Folder Include="Areas\Admin\Views\Base\" />
-    <Folder Include="Areas\Admin\Views\ListUser\" />
     <Folder Include="Areas\Admin\Views\Logout\" />
     <Folder Include="Common\" />
     <Folder Include="data\" />

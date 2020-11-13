@@ -260,8 +260,8 @@ namespace Project_HoangPhuongAnh.Models.DAO
                 {
                     StringBuilder query = new StringBuilder();
                     query.Append("SELECT u.user_id, u.email, u.full_name, u.tel, u.birthday, u.address_user, u.role");
-                    query.Append("FROM tbl_user as u ");
-                    query.Append("WHERE u.user_id= @user_id ;");
+                    query.Append(" FROM tbl_user as u ");
+                    query.Append(" WHERE u.user_id= @user_id ;");
 
 
                     using (SqlCommand command = new SqlCommand(query.ToString(), conn))
