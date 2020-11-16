@@ -1,9 +1,23 @@
-﻿<!DOCTYPE html>
+﻿@{
+    string email = "";
+    if (Session["email"] != null)
+    {
+        email = Session["email"].ToString();
+    }
+}
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
 </head>
 <body>
-    @RenderSection("scripts", required: false)
+
+    @RenderBody()
+    <!--footer-->
+    <div class="text-center">
+        <div class="credits">
+            <p>&copy; 2020 Project manager. All rights reserved | Design by <a href="#">Hoang Phuong Anh</a></p>
+        </div>
+    </div>
+    <!--//footer-->
 </body>
 </html>

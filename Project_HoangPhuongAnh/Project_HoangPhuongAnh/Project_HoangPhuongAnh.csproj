@@ -139,7 +139,9 @@
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
     <Compile Include="Areas\Admin\Controllers\LogoutController.cs" />
     <Compile Include="Areas\Admin\DAO\BaseDao.cs" />
+    <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ShopController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -531,10 +533,22 @@
     <Content Include="css_home_admin\xcharts.min.css" />
     <Content Include="css_login_admin\font-awesome.css" />
     <Content Include="css_login_admin\style_login.css" />
+    <Content Include="css_user\about.css" />
+    <Content Include="css_user\bootstrap.css" />
+    <Content Include="css_user\checkout.css" />
+    <Content Include="css_user\contact.css" />
+    <Content Include="css_user\creditly.css" />
+    <Content Include="css_user\easy-responsive-tabs.css" />
+    <Content Include="css_user\flexslider.css" />
+    <Content Include="css_user\font-awesome.css" />
+    <Content Include="css_user\jquery-ui1.css" />
+    <Content Include="css_user\shop.css" />
+    <Content Include="css_user\style.css" />
+    <Content Include="css_user\style7.css" />
     <Content Include="fonts\ElegantIcons.svg" />
     <Content Include="fonts\fontawesome-webfont.svg" />
-    <Content Include="Images\1.jpg" />
-    <Content Include="Images\2.jpg" />
+    <Content Include="images\1.jpg" />
+    <Content Include="images\2.jpg" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -544,6 +558,48 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="images\3.jpeg" />
+    <Content Include="images\ab.jpg" />
+    <Content Include="images\b1.jpg" />
+    <Content Include="images\b2.jpg" />
+    <Content Include="images\b3.jpg" />
+    <Content Include="images\b4.jpg" />
+    <Content Include="images\banner1.jpg" />
+    <Content Include="images\banner2.jpg" />
+    <Content Include="images\banner3.jpg" />
+    <Content Include="images\banner4.jpg" />
+    <Content Include="images\close.png" />
+    <Content Include="images\close_1.JPG" />
+    <Content Include="images\d1.jpg" />
+    <Content Include="images\d2.jpg" />
+    <Content Include="images\d3.jpg" />
+    <Content Include="images\g1.jpg" />
+    <Content Include="images\g2.jpg" />
+    <Content Include="images\g3.jpg" />
+    <Content Include="images\g4.jpg" />
+    <Content Include="images\g5.jpg" />
+    <Content Include="images\g6.jpg" />
+    <Content Include="images\left.png" />
+    <Content Include="images\left_black.png" />
+    <Content Include="images\move-top.png" />
+    <Content Include="images\overlay.png" />
+    <Content Include="images\paypal.png" />
+    <Content Include="images\right.png" />
+    <Content Include="images\right_black.png" />
+    <Content Include="images\s1.jpg" />
+    <Content Include="images\s2.jpg" />
+    <Content Include="images\s3.jpg" />
+    <Content Include="images\s4.jpg" />
+    <Content Include="images\s5.jpg" />
+    <Content Include="images\s6.jpg" />
+    <Content Include="images\s7.jpg" />
+    <Content Include="images\s8.jpg" />
+    <Content Include="images\s9.jpg" />
+    <Content Include="images\search.png" />
+    <Content Include="images\t1.jpg" />
+    <Content Include="images\t2.jpg" />
+    <Content Include="images\t3.jpg" />
+    <Content Include="images\t4.jpg" />
     <Content Include="img\arrow-up.png" />
     <Content Include="img\avatar-mini.jpg" />
     <Content Include="img\avatar-mini2.jpg" />
@@ -639,6 +695,21 @@
     <Content Include="js_home_admin\sparkline-chart.js" />
     <Content Include="js_home_admin\sparklines.js" />
     <Content Include="js_home_admin\xcharts.min.js" />
+    <Content Include="js_user\bootstrap-3.1.1.min.js" />
+    <Content Include="js_user\classie.js" />
+    <Content Include="js_user\creditly.js" />
+    <Content Include="js_user\demo1.js" />
+    <Content Include="js_user\easing.js" />
+    <Content Include="js_user\easy-responsive-tabs.js" />
+    <Content Include="js_user\imagezoom.js" />
+    <Content Include="js_user\jquery-2.1.4.min.js" />
+    <Content Include="js_user\jquery-ui.js" />
+    <Content Include="js_user\jquery.flexslider.js" />
+    <Content Include="js_user\minicart.js" />
+    <Content Include="js_user\modernizr-2.6.2.min.js" />
+    <Content Include="js_user\move-top.js" />
+    <Content Include="js_user\responsiveslides.min.js" />
+    <Content Include="js_user\search.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -658,8 +729,6 @@
     <Folder Include="Areas\Admin\img\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Styles\" />
-    <Folder Include="Areas\Admin\Views\Base\" />
-    <Folder Include="Areas\Admin\Views\Logout\" />
     <Folder Include="Common\" />
     <Folder Include="data\" />
     <Folder Include="Imagesize\" />
@@ -732,6 +801,8 @@
     <Content Include="assets\morris.js-0.4.3\spec\lib\parse_time_spec.coffee" />
     <Content Include="assets\morris.js-0.4.3\spec\support\placeholder.coffee" />
     <None Include="packages.config" />
+    <Content Include="Views\Default\Index.cshtml" />
+    <Content Include="Views\Shop\Shop.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
