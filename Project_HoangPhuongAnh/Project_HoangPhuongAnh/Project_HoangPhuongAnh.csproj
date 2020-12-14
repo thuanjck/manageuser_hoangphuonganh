@@ -146,6 +146,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\DAO\BaseDao.cs" />
+    <Compile Include="Models\DAO\TblSanPhamDao.cs" />
     <Compile Include="Models\DAO\TblUserDao.cs" />
     <Compile Include="Models\Entities\Tbl_chitiethoadon.cs" />
     <Compile Include="Models\Entities\Tbl_hoadon.cs" />

@@ -14,7 +14,7 @@ namespace Project_HoangPhuongAnh.Models.Entities
 
         public int _gia_ban { get; set; }
 
-        public int _size { set; get; }
+        public String _size { set; get; }
 
         public int _soluong { set; get; }
 
