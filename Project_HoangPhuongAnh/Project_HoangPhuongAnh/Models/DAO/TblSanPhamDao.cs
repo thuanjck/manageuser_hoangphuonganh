@@ -103,5 +103,53 @@ namespace Project_HoangPhuongAnh.Models.DAO
             }
             return totalProduct;
         }
+
+        public Tbl_sanpham GetProductWithID(int _masp)
+        {
+            Tbl_sanpham product = new Tbl_sanpham();
+            try
+            {
+                if (OpenConnection() != null)
+                {
+                    StringBuilder query = new StringBuilder();
+                    query.Append("select * from tbl_sanpham s ");
+                    if (_masp != 0)
+                    {
+                        query.Append(" where s.masp = @masp");
+                    }
+                    // Khởi tạo
+                    SqlCommand comd = new SqlCommand(query.ToString(), conn);
+                    comd.Prepare();
+                    comd.Parameters.Clear();
+                    comd.Parameters.AddWithValue("@masp", _masp);
+                    comd.Connection = conn;
+                    _sqlReader = comd.ExecuteReader();
+                    while (_sqlReader.Read())
+                    {
+                        product._masp = (int)_sqlReader["masp"];
+                        product._maloai = (int)_sqlReader["maloai"];
+                        product._tensanpham = _sqlReader["tensanpham"].ToString();
+                        product._gia_mua = (int)_sqlReader["gia_mua"];
+                        product._gia_ban = (int)_sqlReader["gia_ban"];
+                        product._size = _sqlReader["size"].ToString();
+                        product._soluong = (int)_sqlReader["soluong"];
+                        product._thongtin = _sqlReader["thongtin"].ToString();
+                        product._ngaynhaphang = (DateTime)_sqlReader["ngaynhaphang"];
+                        product._hinhanh = _sqlReader["hinhanh"].ToString();
+                    }
+                }
+            }
+            catch (SqlException e)
+            {
+                // Ném lỗi.
+                throw e;
+            }
+            finally
+            {
+                // Đóng kết nối với DB
+                CloseConnection();
+            }
+            return product;
+        }
     }
 }

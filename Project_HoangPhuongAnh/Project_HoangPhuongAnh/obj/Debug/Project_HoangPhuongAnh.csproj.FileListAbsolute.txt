@@ -69,8 +69,8 @@ D:\DA_PA_2020\manageruser_hpa\Project_HoangPhuongAnh\Project_HoangPhuongAnh\bin\
 D:\DA_PA_2020\manageruser_hpa\Project_HoangPhuongAnh\Project_HoangPhuongAnh\bin\Newtonsoft.Json.xml
 D:\DA_PA_2020\manageruser_hpa\Project_HoangPhuongAnh\Project_HoangPhuongAnh\bin\Antlr3.Runtime.pdb
 D:\DA_PA_2020\manageruser_hpa\Project_HoangPhuongAnh\Project_HoangPhuongAnh\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\DA_PA_2020\manageruser_hpa\Project_HoangPhuongAnh\Project_HoangPhuongAnh\obj\Debug\Project_HoangPhuongAnh.csprojAssemblyReference.cache
 D:\DA_PA_2020\manageruser_hpa\Project_HoangPhuongAnh\Project_HoangPhuongAnh\obj\Debug\Project_HoangPhuongAnh.csproj.CoreCompileInputs.cache
 D:\DA_PA_2020\manageruser_hpa\Project_HoangPhuongAnh\Project_HoangPhuongAnh\obj\Debug\Project_HoangPhuongAnh.csproj.CopyComplete
 D:\DA_PA_2020\manageruser_hpa\Project_HoangPhuongAnh\Project_HoangPhuongAnh\obj\Debug\Project_HoangPhuongAnh.dll
 D:\DA_PA_2020\manageruser_hpa\Project_HoangPhuongAnh\Project_HoangPhuongAnh\obj\Debug\Project_HoangPhuongAnh.pdb
-D:\DA_PA_2020\manageruser_hpa\Project_HoangPhuongAnh\Project_HoangPhuongAnh\obj\Debug\Project_HoangPhuongAnh.csprojAssemblyReference.cache

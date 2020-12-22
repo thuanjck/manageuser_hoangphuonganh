@@ -140,6 +140,8 @@
     <Compile Include="Areas\Admin\Controllers\LogoutController.cs" />
     <Compile Include="Areas\Admin\DAO\BaseDao.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\DetailProductController.cs" />
+    <Compile Include="Controllers\ErrorProductController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ShopController.cs" />
     <Compile Include="Global.asax.cs">
@@ -148,8 +150,10 @@
     <Compile Include="Models\DAO\BaseDao.cs" />
     <Compile Include="Models\DAO\TblSanPhamDao.cs" />
     <Compile Include="Models\DAO\TblUserDao.cs" />
+    <Compile Include="Models\DAO\Tbl_imageDao.cs" />
     <Compile Include="Models\Entities\Tbl_chitiethoadon.cs" />
     <Compile Include="Models\Entities\Tbl_hoadon.cs" />
+    <Compile Include="Models\Entities\Tbl_image.cs" />
     <Compile Include="Models\Entities\Tbl_khachhang.cs" />
     <Compile Include="Models\Entities\Tbl_loaihang.cs" />
     <Compile Include="Models\Entities\Tbl_sanpham.cs" />
@@ -722,9 +726,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Admin\img\" />
@@ -802,8 +803,13 @@
     <Content Include="assets\morris.js-0.4.3\spec\lib\parse_time_spec.coffee" />
     <Content Include="assets\morris.js-0.4.3\spec\support\placeholder.coffee" />
     <None Include="packages.config" />
-    <Content Include="Views\Default\Index.cshtml" />
     <Content Include="Views\Shop\Shop.cshtml" />
+    <Content Include="Views\Default\Index.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\ErrorProduct\Error.cshtml" />
+    <Content Include="Views\DetailProduct\DetailProduct.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
