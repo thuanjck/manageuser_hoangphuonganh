@@ -10,9 +10,9 @@ namespace Project_HoangPhuongAnh.Models.Entities
 
         public string _tensanpham { get; set; }
 
-        public int _gia_mua { get; set; }
+        public string _gia_mua { get; set; }
 
-        public int _gia_ban { get; set; }
+        public string _gia_ban { get; set; }
 
         public String _size { set; get; }
 
@@ -23,5 +23,7 @@ namespace Project_HoangPhuongAnh.Models.Entities
         public DateTime _ngaynhaphang { set; get; }
 
         public string _hinhanh { set; get; }
+
+        public int discount { set; get; }
     }
 }

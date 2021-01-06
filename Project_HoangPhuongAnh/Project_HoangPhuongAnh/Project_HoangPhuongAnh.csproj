@@ -151,6 +151,7 @@
     <Compile Include="Models\DAO\TblSanPhamDao.cs" />
     <Compile Include="Models\DAO\TblUserDao.cs" />
     <Compile Include="Models\DAO\Tbl_imageDao.cs" />
+    <Compile Include="Models\Entities\ShopInfo.cs" />
     <Compile Include="Models\Entities\Tbl_chitiethoadon.cs" />
     <Compile Include="Models\Entities\Tbl_hoadon.cs" />
     <Compile Include="Models\Entities\Tbl_image.cs" />

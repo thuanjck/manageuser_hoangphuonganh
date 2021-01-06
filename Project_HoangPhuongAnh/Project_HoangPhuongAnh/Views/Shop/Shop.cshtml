@@ -1,6 +1,11 @@
 ﻿@using Project_HoangPhuongAnh.Models.Entities;
 @{
     ViewBag.Title = "Shop";
+    string _tensanpham = ViewBag._tensanpham;
+    string product = ViewBag.product;
+    string _gia = ViewBag._gia_checked;
+    string _discount = ViewBag._discount_checked;
+
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -107,136 +112,88 @@
             <!-- //tittle heading -->
             <!-- product left -->
             <div class="side-bar col-md-3">
-                <div class="search-hotel">
-                    <h3 class="agileits-sear-head">Search Here..</h3>
-                    <form action="#" method="post">
-                        <input type="search" placeholder="Product name..." name="search" required="">
-                        <input type="submit" value=" ">
-                    </form>
-                </div>
-                <!-- price range -->
-                <div class="range">
-                    <h3 class="agileits-sear-head">Price range</h3>
-                    <ul class="dropdown-menu6">
-                        <li>
+                <form action="@Url.Action("Shop", "Shop")">
+                    <input type="hidden" id="_action" name="_action" value="search">
+                    <input type="hidden" id="_prodcuct" name="_prodcuct" value="@product">
+                    <div class="search-hotel">
+                        <div class="left-side">
+                            <h3 class="agileits-sear-head">Lọc sản phẩm theo...</h3>
+                            <input type="text" placeholder="Nhập tên sản phẩm..." name="_tensanpham" value="@_tensanpham">
+                        </div>
+                        <br>
+                        <div class="left-side">
+                            <h3 class="agileits-sear-head">Khoảng giá</h3>
+                            <ul>
+                                <li>
+                                    <input class="form-check-input" type="radio" name="_gia" id="_gia_500" value="500000">
+                                    <span class="form-check-label" for="exampleRadios1">
+                                        Dưới 500.000đ
+                                    </span>
+                                </li>
+                                <li>
+                                    <input class="form-check-input" type="radio" name="_gia" id="_gia_700" value="700000">
+                                    <span class="form-check-label" for="exampleRadios2">
+                                        Từ 500.000đ - 700.000đ
+                                    </span>
+                                </li>
+                                <li>
+                                    <input class="form-check-input" type="radio" name="_gia" id="_gia_900" value="900000">
+                                    <span class="form-check-label" for="exampleRadios3">
+                                        Từ 700.000đ - 900.000đ
+                                    </span>
+                                </li>
+                                <li>
+                                    <input class="form-check-input" type="radio" name="_gia" id="_gia_1000" value="1000000">
+                                    <span class="form-check-label" for="exampleRadios3">
+                                        Trên 1.000.000đ
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- // preference -->
+                        <!-- discounts -->
+                        <div class="left-side">
+                            <h3 class="agileits-sear-head">Khuyến mại</h3>
+                            <ul>
+                                <li>
+                                    <input class="form-check-input" type="radio" name="_discount" id="_discount_5" value="5">
+                                    <span class="form-check-label" for="exampleRadios1">
+                                        5% or More
+                                    </span>
+                                </li>
+                                <li>
+                                    <input class="form-check-input" type="radio" name="_discount" id="_discount_10" value="10">
+                                    <span class="form-check-label" for="exampleRadios1">
+                                        10% or More
+                                    </span>
+                                </li>
+                                <li>
+                                    <input class="form-check-input" type="radio" name="_discount" id="_discount_20" value="20">
+                                    <span class="form-check-label" for="exampleRadios1">
+                                        20% or More
+                                    </span>
+                                </li>
+                                <li>
+                                    <input class="form-check-input" type="radio" name="_discount" id="_discount_30" value="30">
+                                    <span class="form-check-label" for="exampleRadios1">
+                                        30% or More
+                                    </span>
+                                </li>
+                                <li>
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="_discount_50" value="50">
+                                    <span class="form-check-label" for="exampleRadios1">
+                                        50% or More
+                                    </span>
+                                </li>
 
-                            <div id="slider-range"></div>
-                            <input type="text" id="amount" style="border: 0; color: #ffffff; font-weight: normal;" />
-                        </li>
-                    </ul>
-                </div>
-                <!-- //price range -->
-                <!--preference -->
-                <div class="left-side">
-                    <h3 class="agileits-sear-head">Occasion</h3>
-                    <ul>
-                        <li>
-                            <input type="checkbox" class="checked">
-                            <span class="span">Casuals</span>
-                        </li>
-                        <li>
-                            <input type="checkbox" class="checked">
-                            <span class="span">Party</span>
-                        </li>
-                        <li>
-                            <input type="checkbox" class="checked">
-                            <span class="span">Wedding</span>
-                        </li>
-                        <li>
-                            <input type="checkbox" class="checked">
-                            <span class="span">Ethnic</span>
-                        </li>
-                    </ul>
-                </div>
-                <!-- // preference -->
-                <!-- discounts -->
-                <div class="left-side">
-                    <h3 class="agileits-sear-head">Discount</h3>
-                    <ul>
-                        <li>
-                            <input type="checkbox" class="checked">
-                            <span class="span">5% or More</span>
-                        </li>
-                        <li>
-                            <input type="checkbox" class="checked">
-                            <span class="span">10% or More</span>
-                        </li>
-                        <li>
-                            <input type="checkbox" class="checked">
-                            <span class="span">20% or More</span>
-                        </li>
-                        <li>
-                            <input type="checkbox" class="checked">
-                            <span class="span">30% or More</span>
-                        </li>
-                        <li>
-                            <input type="checkbox" class="checked">
-                            <span class="span">50% or More</span>
-                        </li>
-                        <li>
-                            <input type="checkbox" class="checked">
-                            <span class="span">60% or More</span>
-                        </li>
-                    </ul>
-                </div>
-                <!-- //discounts -->
-                <!-- reviews -->
-                <div class="customer-rev left-side">
-                    <h3 class="agileits-sear-head">Customer Review</h3>
-                    <ul>
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <span>5.0</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star-o" aria-hidden="true"></i>
-                                <span>4.0</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star-half-o" aria-hidden="true"></i>
-                                <i class="fa fa-star-o" aria-hidden="true"></i>
-                                <span>3.5</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star-o" aria-hidden="true"></i>
-                                <i class="fa fa-star-o" aria-hidden="true"></i>
-                                <span>3.0</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star-half-o" aria-hidden="true"></i>
-                                <i class="fa fa-star-o" aria-hidden="true"></i>
-                                <i class="fa fa-star-o" aria-hidden="true"></i>
-                                <span>2.5</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- //reviews -->
+                            </ul>
+                        </div>
+                        <!-- //discounts -->
+                        <div class="left-side text-center">
+                            <input type="submit" class="btn btn-primary text-center" value="Tìm kiếm" onclick="searchProduct()">
+                        </div>
+                    </div>
+                </form> 
                 <!-- deals -->
                 <div class="deal-leftmk left-side">
                     <h3 class="agileits-sear-head">Special Deals</h3>
@@ -311,62 +268,152 @@
                     <div class="product-sec1">
                         <!--/mens-->
                         @*----------------------------------------------*@
+                        @{ int index = 1;}
+ 
                         @foreach (var _product in ViewBag._listProduct as List<Tbl_sanpham>)
                         {
-                            <div class="col-md-4 product-men">
-                                <div class="product-shoe-info shoe">
-                                    <div class="men-pro-item">
-                                        <div class="men-thumb-item">
-                                            <img src="@Url.Content("~/"+ _product._hinhanh)" alt="">
-                                            <div class="men-cart-pro">
-                                                <div class="inner-men-cart-pro">
-                                                    <a href="@Url.Action("DetailProduct", "DetailProduct", new { product_id = _product._masp })" class="link-product-add-cart">Quick View</a>
-                                                </div>
-                                            </div>
-                                            <span class="product-new-top">New</span>
-                                        </div>
-                                        <div class="item-info-product">
-                                            <h4>
-                                                <a href="single.html">@_product._tensanpham </a>
-                                            </h4>
-                                            <div class="info-product-price">
-                                                <div class="grid_meta">
-                                                    <div class="product_price">
-                                                        <div class="grid-price ">
-                                                            <span class="money ">@_product._gia_ban</span>
+                            if (index % 3 == 0)
+                            {
+                                <div class="row">
+                                    <div class="col-md-4 product-men">
+                                        <div class="product-shoe-info shoe">
+                                            <div class="men-pro-item">
+                                                <div class="men-thumb-item">
+                                                    <span class="product-new-top1">- @_product.discount %</span>
+                                                    <img src="@Url.Content("~/"+ _product._hinhanh)" alt="">
+                                                    <div class="men-cart-pro">
+                                                        <div class="inner-men-cart-pro">
+                                                            <a href="@Url.Action("DetailProduct", "DetailProduct", new { product_id = _product._masp })" class="link-product-add-cart">Quick View</a>
                                                         </div>
                                                     </div>
-                                                    <ul class="stars">
-                                                        <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-                                                    </ul>
+                                                    <span class="product-new-top">New</span>
                                                 </div>
-                                                <div class="shoe single-item hvr-outline-out">
-                                                    <form action="#" method="post">
-                                                        <input type="hidden" name="cmd" value="_cart">
-                                                        <input type="hidden" name="add" value="1">
-                                                        <input type="hidden" name="shoe_item" value="Bella Toes">
-                                                        <input type="hidden" name="amount" value="675.00">
-                                                        <button type="submit" class="shoe-cart pshoe-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
+                                                <div class="item-info-product">
+                                                    <h4>
+                                                        <a href="single.html">@_product._tensanpham </a>
+                                                    </h4>
+                                                    <div class="info-product-price">
+                                                        <div class="grid_meta">
+                                                            <div class="product_price">
+                                                                <div class="grid-price ">
+                                                                    <span class="money ">@_product._gia_ban</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="shoe single-item hvr-outline-out">
+                                                            <form action="#" method="post">
+                                                                <input type="hidden" name="cmd" value="_cart">
+                                                                <input type="hidden" name="add" value="1">
+                                                                <input type="hidden" name="shoe_item" value="Bella Toes">
+                                                                <input type="hidden" name="amount" value="675.00">
+                                                                <button type="submit" class="shoe-cart pshoe-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
 
-                                                        <a href="#" data-toggle="modal" data-target="#myModal1"></a>
-                                                    </form>
+                                                                <a href="#" data-toggle="modal" data-target="#myModal1"></a>
+                                                            </form>
 
+                                                        </div>
+                                                    </div>
+                                                    <div class="clearfix"></div>
                                                 </div>
                                             </div>
-                                            <div class="clearfix"></div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+
+                            }
+                            else
+                            {
+                                <div class="col-md-4 product-men">
+                                    <div class="product-shoe-info shoe">
+                                        <div class="men-pro-item">
+                                            <div class="men-thumb-item">
+                                                <span class="product-new-top1">- @_product.discount %</span>
+                                                <img src="@Url.Content("~/"+ _product._hinhanh)" alt="">
+                                                <div class="men-cart-pro">
+                                                    <div class="inner-men-cart-pro">
+                                                        <a href="@Url.Action("DetailProduct", "DetailProduct", new { product_id = _product._masp })" class="link-product-add-cart">Quick View</a>
+                                                    </div>
+                                                </div>
+                                                <span class="product-new-top">New</span>
+                                            </div>
+                                            <div class="item-info-product">
+                                                <h4>
+                                                    <a href="single.html">@_product._tensanpham </a>
+                                                </h4>
+                                                <div class="info-product-price">
+                                                    <div class="grid_meta">
+                                                        <div class="product_price">
+                                                            <div class="grid-price ">
+                                                                <span class="money ">@_product._gia_ban</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="shoe single-item hvr-outline-out">
+                                                        <form action="#" method="post">
+                                                            <input type="hidden" name="cmd" value="_cart">
+                                                            <input type="hidden" name="add" value="1">
+                                                            <input type="hidden" name="shoe_item" value="Bella Toes">
+                                                            <input type="hidden" name="amount" value="675.00">
+                                                            <button type="submit" class="shoe-cart pshoe-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
+
+                                                            <a href="#" data-toggle="modal" data-target="#myModal1"></a>
+                                                        </form>
+
+                                                    </div>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                            index++;
                         }
                         @*----------------------------------------------*@
                         <div class="clearfix"></div>
                     </div>
+                    <nav aria-label="Page navigation example" class="text-center">
+                        <ul class="pagination justify-content-center">
+                            @if (ViewBag.listPaging != null && ViewBag.listPaging.Count != 0)
+                            {
+                                if (ViewBag.listPaging[0] > ViewBag.limitPage)
+                                {
+                                    var page = ViewBag.listPaging[0] - ViewBag.limitPage;
+                                    <li class="page-item">
+                                        <a class="page-link" href="@Url.Action("Shop", "Shop", new ShopInfo() { _product = product, _action = "paging", _currentPage = page })"
+                                           tabindex="-1">Previous</a>
+                                    </li>
 
+                                }
+                                foreach (var item in ViewBag.listPaging)
+                                {
+                                    if (ViewBag.currentPage != item)
+                                    {
+                                        <li class="page-item">
+                                            <a class="page-link"
+                                               href="@Url.Action("Shop", "Shop", new ShopInfo() {
+                                                                      _product = product,
+                                                                      _action = "paging",
+                                                                      _currentPage = item })">@item</a>
+                                                                </li>
+
+                                                            }
+                                                            if (ViewBag.currentPage == item)
+                                                            {
+                                                                <li class="page-item"><a>@item</a></li>
+                                                            }
+                                                        }
+                                                        if (ViewBag.listPaging[0] + ViewBag.limitPage - 1 < ViewBag.totalPage)
+                                                        {
+                                                            var page = ViewBag.listPaging[0] + ViewBag.limitPage;
+                                                            <li class="page-item">
+                                                                <a class="page-link" href="@Url.Action("Shop", "Shop", new ShopInfo() { _product = product, _action = "paging", _currentPage = page })">Next</a>
+
+                                                            </li>
+                                                        }
+                                                    }
+                        </ul>
+                    </nav>
                     <!-- //product-sec1 -->
                     <div class="col-md-6 shop_left shp">
                         <img src="@Url.Content("~/images/banner4.jpg")" alt="">
@@ -607,17 +654,17 @@
     <!-- cart-js -->
     <script src="@Url.Content("~/js_user/minicart.js")"></script>
     <script>
-		shoe.render();
+        shoe.render();
 
-		shoe.cart.on('shoe_checkout', function (evt) {
-			var items, len, i;
+        shoe.cart.on('shoe_checkout', function (evt) {
+            var items, len, i;
 
-			if (this.subtotal() > 0) {
-				items = this.items();
+            if (this.subtotal() > 0) {
+                items = this.items();
 
-				for (i = 0, len = items.length; i < len; i++) {}
-			}
-		});
+                for (i = 0, len = items.length; i < len; i++) { }
+            }
+        });
     </script>
     <!-- //cart-js -->
     <!-- /nav -->
@@ -630,35 +677,43 @@
     <!--//search-bar-->
     <!-- price range (top products) -->
     <script src="@Url.Content("~/js_user/jquery-ui.js")"></script>
-    <script>
-		//<![CDATA[
-		$(window).load(function () {
-			$("#slider-range").slider({
-				range: true,
-				min: 0,
-				max: 9000,
-				values: [50, 6000],
-				slide: function (event, ui) {
-					$("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
-				}
-			});
-			$("#amount").val("$" + $("#slider-range").slider("values", 0) + " - $" + $("#slider-range").slider("values", 1));
-
-		}); //]]>
-    </script>
     <!-- //price range (top products) -->
     <!-- start-smoth-scrolling -->
     <script type="text/javascript" src="@Url.Content("~/js_user/move-top.js")"></script>
     <script type="text/javascript" src="@Url.Content("~/js_user/easing.js")"></script>
     <script type="text/javascript">
-		jQuery(document).ready(function ($) {
-			$(".scroll").click(function (event) {
-				event.preventDefault();
-				$('html,body').animate({
-					scrollTop: $(this.hash).offset().top
-				}, 1000);
-			});
-		});
+        jQuery(document).ready(function ($) {
+            var _gia_checked = parseInt(@ViewBag._gia);
+            var _discount_checked = parseInt(@ViewBag._discount);
+            if (_gia_checked == 500000) {
+                $("#_gia_500").prop("checked", "checked");
+            } else if (_gia_checked == 700000) {
+                $("#_gia_700").prop("checked", "checked");
+            } else if (_gia_checked == 900000) {
+                $("#_gia_900").prop("checked", "checked");
+            } else if (_gia_checked == 1000000) {
+                $("#_gia_1000").prop("checked", "checked");
+            }
+
+            if (_discount_checked == 5) {
+                $("#_discount_5").prop("checked", "checked");
+            } else if (_discount_checked == 10) {
+                $("#_discount_10").prop("checked", "checked");
+            } else if (_discount_checked == 20) {
+                $("#_discount_20").prop("checked", "checked");
+            } else if (_discount_checked == 30) {
+                $("#_discount_30").prop("checked", "checked");
+            } else if (_discount_checked == 50) {
+                $("#_discount_50").prop("checked", "checked");
+            }
+            
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({
+                    scrollTop: $(this.hash).offset().top
+                }, 1000);
+            });
+        });
     </script>
     <!-- //end-smoth-scrolling -->
     <script type="text/javascript" src="@Url.Content("~/js_user/bootstrap-3.1.1.min.js")"></script>

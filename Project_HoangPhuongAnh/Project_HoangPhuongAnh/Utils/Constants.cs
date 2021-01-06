@@ -11,6 +11,7 @@ namespace Project_HoangPhuongAnh.Utils
         public static int RULE_USER = 1;
         public static int NIKE = 1;
         public static int ADIDAS = 2;
+        public static int SNEAKERS = 3;
         public static string EMAIL = "email";
     }
 }

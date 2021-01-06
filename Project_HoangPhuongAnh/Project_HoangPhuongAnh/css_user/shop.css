@@ -332,10 +332,30 @@ p.sbmincart-empty-text {
 	background: #219ff3;
 }
 
+.product-men:nth-child(2) .product-new-top1, .product-men:nth-child(6) .product-new-top1, .product-men:nth-child(7) .product-new-top1 {
+    background: #FFC107;
+}
+
+.product-men:nth-child(4) .product-new-top1, .product-men:nth-child(8) .product-new-top1, .product-new-top, .product-men:nth-child(3) .product-new-top1 {
+    background: #219ff3;
+}
+
 .product-new-top {
     background: #fb383b;
     color: #fff;
     right: 0;
+    position: absolute;
+    top: 0;
+    width: 80px;
+    font-size: 13px;
+    height: 29px;
+    text-align: center;
+    line-height: 2.3;
+}
+.product-new-top1 {
+    background: #fb383b;
+    color: #fff;
+    left: 0;
     position: absolute;
     top: 0;
     width: 80px;
@@ -967,7 +987,7 @@ color: #000;
 	margin:2em 0 0;
     color: #545454;
     font-size: 0.9em;
-    line-height:2sem;
+    line-height:2em;
 }
 .bootstrap-tab-text-grid:nth-child(2){
 	margin:3em 0 0;

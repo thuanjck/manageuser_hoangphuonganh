@@ -1,4 +1,4 @@
-﻿
+﻿@using Project_HoangPhuongAnh.Models.Entities;
 @{
     ViewBag.Title = "Index";
 }
@@ -161,7 +161,8 @@
                     <h3>Nike DOWNSHIFTER</h3>
                     <p>Itaque earum rerum hic tenetur a sapiente delectus reiciendis maiores alias consequatur.sed quia non numquam eius modi tempora incidunt ut labore et dolore .</p>
                     <div class="shop-button">
-                        <a href="@Url.Action("Shop", "Shop", new { product = "nike"})">Shop Now</a>
+                        <a href="@Url.Action("Shop", "Shop",  new ShopInfo() { _product = "nike"} )">Shop Now</a>
+                        <input type="hidden" id="product" name="product" value="nike" />
                     </div>
                 </div>
             </div>
@@ -184,7 +185,8 @@
                         <h3>Sneakers</h3>
                         <p>Itaque earum rerum hic tenetur a sapiente delectus reiciendis maiores alias consequatur.sed quia non numquam eius modi tempora incidunt ut labore .</p>
                         <div class="shop-button">
-                            <a href="shop.html">Shop Now</a>
+                            <a href="@Url.Action("Shop", "Shop", new ShopInfo() { _product = "sneakers"} )">Shop Now</a>
+                            <input type="hidden" id="product" name="product" value="sneakers" />
                         </div>
                     </div>
                 </div>
@@ -205,10 +207,11 @@
                 </div>
                 <div class="grid_sec_info last">
                     <div class="style-grid-2-text_info">
-                        <h3>Sneakers</h3>
+                        <h3>Adidas</h3>
                         <p>Itaque earum rerum hic tenetur a sapiente delectus reiciendis maiores alias consequatur.sed quia non numquam eius modi tempora incidunt ut labore .</p>
                         <div class="shop-button two">
-                            <a href="shop.html">Shop Now</a>
+                            <a href="@Url.Action("Shop", "Shop", new ShopInfo() { _product = "adidas"} )">Shop Now</a>
+                            <input type="hidden" id="product" name="product" value="adidas" />
                         </div>
                     </div>
                 </div>
