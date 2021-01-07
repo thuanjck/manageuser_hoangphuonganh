@@ -2,7 +2,7 @@
 @{
     ViewBag.Title = "Shop";
     string _tensanpham = ViewBag._tensanpham;
-    string product = ViewBag.product;
+    string product = ViewBag.product == null ? Session["_product"].ToString() : ViewBag.product;
     string _gia = ViewBag._gia_checked;
     string _discount = ViewBag._discount_checked;
 
@@ -114,14 +114,14 @@
             <div class="side-bar col-md-3">
                 <form action="@Url.Action("Shop", "Shop")">
                     <input type="hidden" id="_action" name="_action" value="search">
-                    <input type="hidden" id="_prodcuct" name="_prodcuct" value="@product">
+                    <input type="hidden" id="_product" name="_product" value="@product">
                     <div class="search-hotel">
                         <div class="left-side">
                             <h3 class="agileits-sear-head">Lọc sản phẩm theo...</h3>
                             <input type="text" placeholder="Nhập tên sản phẩm..." name="_tensanpham" value="@_tensanpham">
                         </div>
                         <br>
-                        <div class="left-side">
+                        <div class="left-side" id="khoanggia">
                             <h3 class="agileits-sear-head">Khoảng giá</h3>
                             <ul>
                                 <li>
@@ -152,7 +152,7 @@
                         </div>
                         <!-- // preference -->
                         <!-- discounts -->
-                        <div class="left-side">
+                        <div class="left-side" id="khuyenmai">
                             <h3 class="agileits-sear-head">Khuyến mại</h3>
                             <ul>
                                 <li>
@@ -180,7 +180,7 @@
                                     </span>
                                 </li>
                                 <li>
-                                    <input class="form-check-input" type="radio" name="exampleRadios" id="_discount_50" value="50">
+                                    <input class="form-check-input" type="radio" name="_discount" id="_discount_50" value="50">
                                     <span class="form-check-label" for="exampleRadios1">
                                         50% or More
                                     </span>
@@ -193,7 +193,7 @@
                             <input type="submit" class="btn btn-primary text-center" value="Tìm kiếm" onclick="searchProduct()">
                         </div>
                     </div>
-                </form> 
+                </form>
                 <!-- deals -->
                 <div class="deal-leftmk left-side">
                     <h3 class="agileits-sear-head">Special Deals</h3>
@@ -269,7 +269,7 @@
                         <!--/mens-->
                         @*----------------------------------------------*@
                         @{ int index = 1;}
- 
+
                         @foreach (var _product in ViewBag._listProduct as List<Tbl_sanpham>)
                         {
                             if (index % 3 == 0)
@@ -683,37 +683,71 @@
     <script type="text/javascript" src="@Url.Content("~/js_user/easing.js")"></script>
     <script type="text/javascript">
         jQuery(document).ready(function ($) {
+            var checkedCheckkbox;
+            var checkedCheckkboxKM;
             var _gia_checked = parseInt(@ViewBag._gia);
             var _discount_checked = parseInt(@ViewBag._discount);
             if (_gia_checked == 500000) {
                 $("#_gia_500").prop("checked", "checked");
+                checkedCheckkbox = "_gia_500";
             } else if (_gia_checked == 700000) {
                 $("#_gia_700").prop("checked", "checked");
+                checkedCheckkbox = "_gia_700";
             } else if (_gia_checked == 900000) {
                 $("#_gia_900").prop("checked", "checked");
+                checkedCheckkbox = "_gia_900";
             } else if (_gia_checked == 1000000) {
                 $("#_gia_1000").prop("checked", "checked");
+                checkedCheckkbox = "_gia_1000";
             }
 
             if (_discount_checked == 5) {
                 $("#_discount_5").prop("checked", "checked");
+                checkedCheckkboxKM = "_discount_5";
             } else if (_discount_checked == 10) {
                 $("#_discount_10").prop("checked", "checked");
+                checkedCheckkboxKM = "_discount_10";
             } else if (_discount_checked == 20) {
                 $("#_discount_20").prop("checked", "checked");
+                checkedCheckkboxKM = "_discount_20";
             } else if (_discount_checked == 30) {
                 $("#_discount_30").prop("checked", "checked");
+                checkedCheckkboxKM = "_discount_30";
             } else if (_discount_checked == 50) {
                 $("#_discount_50").prop("checked", "checked");
+                checkedCheckkboxKM = "_discount_50";
             }
-            
+
             $(".scroll").click(function (event) {
                 event.preventDefault();
                 $('html,body').animate({
                     scrollTop: $(this.hash).offset().top
                 }, 1000);
             });
+            
+            $("#khoanggia > ul > li .form-check-input").click(function () {
+                if (checkedCheckkbox == $(this).context.id) {
+                    $(this).context.checked = false;
+                    checkedCheckkbox = undefined;
+                } else {
+                    $(this).context.checked = true;
+                    checkedCheckkbox = $(this).context.id;
+                }
+            })
+
+            $("#khuyenmai > ul > li .form-check-input").click(function () {
+                if (checkedCheckkboxKM == $(this).context.id) {
+                    $(this).context.checked = false;
+                    checkedCheckkboxKM = undefined;
+                } else {
+                    $(this).context.checked = true;
+                    checkedCheckkboxKM = $(this).context.id;
+                }
+            })
+
         });
+
+
     </script>
     <!-- //end-smoth-scrolling -->
     <script type="text/javascript" src="@Url.Content("~/js_user/bootstrap-3.1.1.min.js")"></script>
