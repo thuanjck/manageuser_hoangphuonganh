@@ -5,7 +5,6 @@
     string product = ViewBag.product == null ? Session["_product"].ToString() : ViewBag.product;
     string _gia = ViewBag._gia_checked;
     string _discount = ViewBag._discount_checked;
-
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -645,7 +644,6 @@
             <p class="copy-right-w3ls-agileits">&copy 2018 Downy Shoes. All rights reserved | Design by <a href="http://w3layouts.com/">w3layouts</a></p>
         </div>
     </div>
-    </div>
     <!-- //footer -->
     <a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
     <!-- js -->
@@ -744,15 +742,9 @@
                     checkedCheckkboxKM = $(this).context.id;
                 }
             })
-
         });
-
-
     </script>
     <!-- //end-smoth-scrolling -->
     <script type="text/javascript" src="@Url.Content("~/js_user/bootstrap-3.1.1.min.js")"></script>
-
-
 </body>
-
 </html>
