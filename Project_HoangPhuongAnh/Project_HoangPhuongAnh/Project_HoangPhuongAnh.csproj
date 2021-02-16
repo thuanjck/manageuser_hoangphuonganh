@@ -139,6 +139,8 @@
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
     <Compile Include="Areas\Admin\Controllers\LogoutController.cs" />
     <Compile Include="Areas\Admin\DAO\BaseDao.cs" />
+    <Compile Include="Controllers\AddToCartController.cs" />
+    <Compile Include="Controllers\CheckoutController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\DetailProductController.cs" />
     <Compile Include="Controllers\ErrorProductController.cs" />
@@ -735,6 +737,7 @@
     <Folder Include="Common\" />
     <Folder Include="data\" />
     <Folder Include="Imagesize\" />
+    <Folder Include="Views\AddToCart\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -811,6 +814,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\ErrorProduct\Error.cshtml" />
     <Content Include="Views\DetailProduct\DetailProduct.cshtml" />
+    <Content Include="Views\Checkout\Checkout.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

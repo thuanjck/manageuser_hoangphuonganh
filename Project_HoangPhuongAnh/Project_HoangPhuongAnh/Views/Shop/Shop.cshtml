@@ -5,7 +5,14 @@
     string product = ViewBag.product == null ? Session["_product"].ToString() : ViewBag.product;
     string _gia = ViewBag._gia_checked;
     string _discount = ViewBag._discount_checked;
+    string count = "";
+    if (ViewBag.cart != null)
+    {
+        count = ViewBag.cart;
+    }
+    
 }
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -67,28 +74,18 @@
                     <div class="shoecart shoecart2 cart cart box_1">
                         <form action="#" method="post" class="last">
                             <input type="hidden" name="cmd" value="_cart">
-                            <input type="hidden" name="display" value="1">
-                            <button class="top_shoe_cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
+                            <button class="top_shoe_cart" style="width:90px;">
+                                <i class="fa fa-cart-arrow-down top_shoe_cart fa-lg" aria-hidden="false"></i>
+                                <span class="badge badge-warning">@count</span>
+                                
+                            </button>
                         </form>
                     </div>
                 </div>
             </div>
+            
         </div>
         <!-- //cart details -->
-        <!-- search -->
-        <div class="search_w3ls_agileinfo">
-            <div class="cd-main-header">
-                <ul class="cd-header-buttons">
-                    <li><a class="cd-search-trigger" href="#cd-search"> <span></span></a></li>
-                </ul>
-            </div>
-            <div id="cd-search" class="cd-search">
-                <form action="#" method="post">
-                    <input name="Search" type="search" placeholder="Click enter after typing...">
-                </form>
-            </div>
-        </div>
-        <!-- //search -->
         <div class="clearfix"></div>
         <!-- /banner_inner -->
         <div class="services-breadcrumb_w3ls_agileinfo">
@@ -300,14 +297,19 @@
                                                             </div>
                                                         </div>
                                                         <div class="shoe single-item hvr-outline-out">
-                                                            <form action="#" method="post">
+                                                            <form action="@Url.Action("Add", "AddToCart")" method="post">
                                                                 <input type="hidden" name="cmd" value="_cart">
                                                                 <input type="hidden" name="add" value="1">
-                                                                <input type="hidden" name="shoe_item" value="Bella Toes">
-                                                                <input type="hidden" name="amount" value="675.00">
-                                                                <button type="submit" class="shoe-cart pshoe-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
+                                                                <input type="hidden" name="shoe_item" value="@_product._tensanpham">
+                                                                <input type="hidden" name="amount" value="@_product._gia_ban.Replace(".","")">
+                                                                @*<button type="submit" class="shoe-cart pshoe-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>*@
 
-                                                                <a href="#" data-toggle="modal" data-target="#myModal1"></a>
+                                                                @*<a class="shoe-cart pshoe-cart" href="@Url.Action("Add", "AddToCart")" data-toggle="modal" data-target="#myModal1"></a>*@
+                                                                @*<button>
+            <i class="fa fa-cart-plus" aria-hidden="true"></i>
+        </button>*@
+                                                                <a href="@Url.Action("Add","AddToCart")"
+                                                                   class="btn btn-primary btn-lg">Them vao gio</a>
                                                             </form>
 
                                                         </div>
@@ -348,14 +350,19 @@
                                                         </div>
                                                     </div>
                                                     <div class="shoe single-item hvr-outline-out">
-                                                        <form action="#" method="post">
+                                                        <form action="@Url.Action("Add", "AddToCart")" method="post">
                                                             <input type="hidden" name="cmd" value="_cart">
                                                             <input type="hidden" name="add" value="1">
-                                                            <input type="hidden" name="shoe_item" value="Bella Toes">
-                                                            <input type="hidden" name="amount" value="675.00">
-                                                            <button type="submit" class="shoe-cart pshoe-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
+                                                            <input type="hidden" name="shoe_item" value="@_product._tensanpham">
+                                                            <input type="hidden" name="id" value="@_product._masp">
+                                                            <input type="hidden" name="amount" value="@_product._gia_ban.Replace(".","")">
 
-                                                            <a href="#" data-toggle="modal" data-target="#myModal1"></a>
+
+                                                            @*<button type="submit" class="shoe-cart pshoe-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>*@
+
+                                                            @*<a href="@Url.Action("Add", "AddToCart")" data-toggle="modal" data-target="#myModal1"></a>*@
+                                                            <a href="@Url.Action("Add","AddToCart")"
+                                                               class="btn btn-primary btn-lg">Them vao gio</a>
                                                         </form>
 
                                                     </div>
@@ -644,6 +651,8 @@
             <p class="copy-right-w3ls-agileits">&copy 2018 Downy Shoes. All rights reserved | Design by <a href="http://w3layouts.com/">w3layouts</a></p>
         </div>
     </div>
+
+
     <!-- //footer -->
     <a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
     <!-- js -->
